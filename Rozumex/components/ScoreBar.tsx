@@ -8,7 +8,7 @@ type StatusBarProps = {
   num3: number;
 };
 
-export const StatusBar: React.FC<StatusBarProps> = ({ num1, num2, num3 }) => {
+export const ScoreBar: React.FC<StatusBarProps> = ({ num1, num2, num3 }) => {
   let [fontsLoaded, fontError] = useFonts({
     Rubik_300Light_Italic,
   });

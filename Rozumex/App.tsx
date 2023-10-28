@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, StatusBar } from "react-native";
 import { useFonts, Rubik_900Black } from "@expo-google-fonts/rubik";
-import { StatusBar } from "./components/StatusBar";
+import { ScoreBar } from "./components/ScoreBar";
 export default function App() {
   let [fontsLoaded] = useFonts({
     Rubik_900Black,
@@ -12,7 +12,8 @@ export default function App() {
   }
   return (
     <View className="px-4 h-full flex-1 items-center justify-center bg-yellow-500">
-      <StatusBar num1={222} num2={70} num3={284} />
+      <ScoreBar num1={222} num2={70} num3={284} />
+      <StatusBar style="auto" />
     </View>
   );
 }
