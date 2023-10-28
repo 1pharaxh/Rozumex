@@ -23,11 +23,11 @@ export const ScoreBar: React.FC<StatusBarProps> = ({ num1, num2, num3 }) => {
         shadowColor: "#000",
         shadowOffset: {
           width: -10,
-          height: -10,
+          height: 10,
         },
-        shadowOpacity: 0.8,
-        shadowRadius: 50,
-        elevation: 30,
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 25,
       }}
     >
       <View className="flex-row flex justify-center gap-6 px-4 py-2">
