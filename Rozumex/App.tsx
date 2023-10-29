@@ -23,6 +23,8 @@ export default function App() {
         contentContainerStyle={{ flexGrow: 1 }}
         className="pt-10 h-full w-full relative"
       >
+        <RuneGroupIcon width={300} height={700} />
+
         <View className="absolute top-0 left-10">
           <CircleLevel num={1} />
         </View>
@@ -31,27 +33,15 @@ export default function App() {
           <CircleLevel num={2} />
         </View>
 
-        <Image
-          source={require("./assets/icons/rune_icon.png")}
-          className="absolute top-36 left-16"
-          style={{ width: 82, height: 82, objectFit: "contain" }}
-        />
-
         <View className="absolute top-48 right-10">
           <CircleLevel num={3} />
         </View>
 
-        <View className="absolute top-60 left-8">
+        <View className="absolute top-64 left-6">
           <CircleLevel num={4} />
         </View>
 
-        <Image
-          source={require("./assets/icons/rune_icon.png")}
-          className="absolute top-72 right-16"
-          style={{ width: 82, height: 82, objectFit: "contain" }}
-        />
-
-        <View className="absolute top-[370px] right-10">
+        <View className="absolute top-[390px] right-16">
           <CircleLevel num={6} />
         </View>
 
@@ -59,19 +49,13 @@ export default function App() {
           <CircleLevel num={5} />
         </View>
 
-        <View className="absolute top-[480px] right-1/3">
+        <View className="absolute top-[480px] left-1/3">
           <CircleLevel num={7} />
         </View>
 
-        <View className="absolute top-[540px] left-10">
+        <View className="absolute top-[530px] left-8">
           <CircleLevel num={8} />
         </View>
-
-        <Image
-          source={require("./assets/icons/rune_icon.png")}
-          className="absolute top-[550px] right-10"
-          style={{ width: 82, height: 82, objectFit: "contain" }}
-        />
       </ScrollView>
     </View>
   );
