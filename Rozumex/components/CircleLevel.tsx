@@ -1,6 +1,6 @@
 import { useFonts, Rubik_900Black } from "@expo-google-fonts/rubik";
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 
 type CircleLevelProps = {
   num: number;
