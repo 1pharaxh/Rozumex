@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   View,
   StatusBar,
@@ -7,16 +7,23 @@ import {
   SafeAreaView,
   Text,
   Animated,
+  Modal,
 } from "react-native";
 import { useFonts, Rubik_900Black } from "@expo-google-fonts/rubik";
 import { ScoreBar } from "./components/ScoreBar";
-import { Modal, TouchableOpacity } from "react-native";
 import { CircleLevel } from "./components/CircleLevel";
 import { BlurView } from "expo-blur";
+import { Platform } from "react-native";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
-  const position = useRef(new Animated.ValueXY()).current;
   const [modalBtnText, setModalBtnText] = useState("");
+  const [safeAreaPadding, setSafeAreaPadding] = useState("pt-20");
+  useEffect(() => {
+    if (Platform.OS === "android") {
+      setSafeAreaPadding("pt-10");
+    }
+  }, []);
+  const position = useRef(new Animated.ValueXY()).current;
 
   const animateButton = () => {
     Animated.timing(position, {
@@ -34,7 +41,12 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView className="px-4 w-full h-full flex-1 items-center justify-start bg-[#FAC129] pt-20">
+    <SafeAreaView
+      className={
+        "px-4 w-full h-full flex-1 items-center justify-start bg-[#FAC129] " +
+        safeAreaPadding
+      }
+    >
       <StatusBar barStyle={"default"} />
 
       <Modal
@@ -46,7 +58,12 @@ export default function App() {
         }}
       >
         <BlurView className="w-full h-full" intensity={40} tint={"light"}>
-          <SafeAreaView className="px-4 w-full h-full flex-1 items-center justify-start  pt-20">
+          <SafeAreaView
+            className={
+              "px-4 w-full h-full flex-1 items-center justify-start  " +
+              safeAreaPadding
+            }
+          >
             {/* Your modal content goes here */}
 
             <ScoreBar
