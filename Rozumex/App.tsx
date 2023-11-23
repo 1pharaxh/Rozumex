@@ -45,29 +45,27 @@ export default function App() {
           setModalVisible(!modalVisible);
         }}
       >
-        <BlurView
-          className="px-4 w-full h-full flex-1 items-center justify-start pt-20"
-          intensity={40}
-          tint={"light"}
-        >
-          {/* Your modal content goes here */}
+        <BlurView className="w-full h-full" intensity={40} tint={"light"}>
+          <SafeAreaView className="px-4 w-full h-full flex-1 items-center justify-start  pt-20">
+            {/* Your modal content goes here */}
 
-          <ScoreBar
-            className="absolute top-0 left-0"
-            bottle={21}
-            health={5}
-            xp={458}
-          />
-
-          <View className="flex flex-row-reverse justify-end p-10 items-start h-full w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(false);
-                // animateButton();
-              }}
-              text={modalBtnText}
+            <ScoreBar
+              className="absolute top-0 left-0"
+              bottle={21}
+              health={5}
+              xp={458}
             />
-          </View>
+
+            <View className="flex flex-row-reverse justify-end p-10 items-start h-full w-full">
+              <CircleLevel
+                onPress={() => {
+                  setModalVisible(false);
+                  // animateButton();
+                }}
+                text={modalBtnText}
+              />
+            </View>
+          </SafeAreaView>
         </BlurView>
       </Modal>
 
@@ -90,7 +88,6 @@ export default function App() {
             <CircleLevel
               onPress={() => {
                 setModalVisible(true);
-                // animateButton();
                 setModalBtnText("1 BASICS");
               }}
               text={"1 BASICS"}
