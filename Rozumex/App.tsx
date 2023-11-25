@@ -10,10 +10,16 @@ import {
   Modal,
 } from "react-native";
 import { useFonts, Rubik_900Black } from "@expo-google-fonts/rubik";
+import { Nunito_900Black } from "@expo-google-fonts/nunito";
 import { ScoreBar } from "./components/ScoreBar";
-import { CircleLevel } from "./components/CircleLevel";
 import { BlurView } from "expo-blur";
 import { Platform } from "react-native";
+import { CircleLevelButton } from "./components/CircleLevelButton";
+import { CircleLevelGrid } from "./components/CircleLevelGrid";
+import { GlowScriptButton } from "./components/GlowScriptButton";
+import { DragnDropButton } from "./components/DragnDropButton";
+import { TrueFalseButton } from "./components/TrueFalseButton";
+import { CoreTaskButton } from "./components/CoreTaskButton";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalBtnText, setModalBtnText] = useState("");
@@ -35,6 +41,7 @@ export default function App() {
 
   let [fontsLoaded] = useFonts({
     Rubik_900Black,
+    Nunito_900Black,
   });
 
   if (!fontsLoaded) {
@@ -72,15 +79,20 @@ export default function App() {
               health={5}
               xp={458}
             />
-
-            <View className="flex flex-row-reverse justify-end p-10 items-start h-full w-full">
-              <CircleLevel
-                onPress={() => {
-                  setModalVisible(false);
-                  // animateButton();
-                }}
-                text={modalBtnText}
-              />
+            <View className="flex flex-col justify-start items-center h-full w-full">
+              <View className="flex flex-row-reverse justify-end p-10 items-start w-full">
+                <CircleLevelButton
+                  onPress={() => {
+                    setModalVisible(false);
+                    // animateButton();
+                  }}
+                  text={modalBtnText}
+                />
+              </View>
+              <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
+              <DragnDropButton />
+              <TrueFalseButton />
+              <CoreTaskButton text="CORE TASK text" />
             </View>
           </SafeAreaView>
         </BlurView>
@@ -92,86 +104,11 @@ export default function App() {
         health={5}
         xp={458}
       />
-      <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        className="pt-10 h-full w-full px-10 "
-        showsVerticalScrollIndicator={false}
-      >
-        <View className="flex flex-col justify-center items-center w-full gap-y-28 pb-28">
-          <Animated.View
-            style={position.getLayout()}
-            className="flex flex-row justify-start items-center w-full"
-          >
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("1 BASICS");
-              }}
-              text={"1 BASICS"}
-            />
-          </Animated.View>
 
-          <View className="flex flex-row justify-end items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("2 SOURCING");
-              }}
-              text={"2 SOURCING"}
-            />
-          </View>
-
-          <View className="flex flex-row justify-center items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("3 IDEAS");
-              }}
-              text={"3 IDEAS"}
-            />
-          </View>
-
-          <View className="flex flex-row justify-start items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("4 VALIDATION");
-              }}
-              text={"4 VALIDATION"}
-            />
-          </View>
-
-          <View className="flex flex-row justify-end items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("5 MOTIVATION");
-              }}
-              text={"5 MOTIVATION"}
-            />
-          </View>
-
-          <View className="flex flex-row justify-center items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("6 HELPERS");
-              }}
-              text={"6 HELPERS"}
-            />
-          </View>
-
-          <View className="flex flex-row justify-start items-center w-full">
-            <CircleLevel
-              onPress={() => {
-                setModalVisible(true);
-                setModalBtnText("7 STARTING");
-              }}
-              text={"7 STARTING"}
-            />
-          </View>
-        </View>
-      </ScrollView>
+      <CircleLevelGrid
+        setModalVisible={setModalVisible}
+        setModalBtnText={setModalBtnText}
+      />
     </SafeAreaView>
   );
 }
