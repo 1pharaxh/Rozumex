@@ -7,7 +7,7 @@ type GlowScriptButtonProps = {
 import { useFonts, Nunito_900Black } from "@expo-google-fonts/nunito";
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import ButtonIcon from "../assets/icons/glowscript_button.svg";
+import ButtonIcon from "../../../assets/icons/glowscript_button.svg";
 
 export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
   text,

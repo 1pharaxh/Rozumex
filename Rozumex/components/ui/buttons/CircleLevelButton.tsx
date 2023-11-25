@@ -1,21 +1,20 @@
-type CoreTaskButtonProps = {
+import { useFonts, Rubik_900Black } from "@expo-google-fonts/rubik";
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import ButtonIcon from "../../../assets/icons/main_level_icon.svg";
+type CircleLevelProps = {
   text: string;
   className?: string;
   onPress?: () => void;
 };
 
-import { useFonts, Nunito_900Black } from "@expo-google-fonts/nunito";
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import ButtonIcon from "../assets/icons/core_task_button.svg";
-
-export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
+export const CircleLevelButton: React.FC<CircleLevelProps> = ({
   text,
   className,
   onPress,
 }) => {
   let [fontsLoaded, fontError] = useFonts({
-    Nunito_900Black,
+    Rubik_900Black,
   });
 
   if (!fontsLoaded && !fontError) {
@@ -27,7 +26,7 @@ export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
     <TouchableOpacity onPress={onPress}>
       <View
         className={
-          "rounded-full w-[168px] h-[98px] flex flex-row items-center justify-center relative" +
+          "rounded-full w-[168px] h-[98px] pt-4 flex flex-row items-center justify-center relative" +
           className
         }
       >
@@ -47,9 +46,9 @@ export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
         <Text
           style={{
             position: "absolute",
-            fontFamily: "Nunito_900Black",
-            fontSize: 22,
-            color: "#FAA241",
+            fontFamily: "Rubik_900Black",
+            fontSize: 23,
+            color: "#42A7E1",
             margin: 0,
             textAlign: "center", // Center align the text
           }}

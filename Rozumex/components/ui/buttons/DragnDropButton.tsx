@@ -5,7 +5,7 @@ type DragnDropButtonProps = {
 };
 
 import { View, Text, TouchableOpacity } from "react-native";
-import ButtonIcon from "../assets/icons/drag_n_drap_button.svg";
+import ButtonIcon from "../../../assets/icons/drag_n_drap_button.svg";
 
 export const DragnDropButton: React.FC<DragnDropButtonProps> = ({
   className,

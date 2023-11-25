@@ -14,12 +14,12 @@ import { Nunito_900Black } from "@expo-google-fonts/nunito";
 import { ScoreBar } from "./components/ScoreBar";
 import { BlurView } from "expo-blur";
 import { Platform } from "react-native";
-import { CircleLevelButton } from "./components/CircleLevelButton";
+import { CircleLevelButton } from "./components/ui/buttons/CircleLevelButton";
 import { CircleLevelGrid } from "./components/CircleLevelGrid";
-import { GlowScriptButton } from "./components/GlowScriptButton";
-import { DragnDropButton } from "./components/DragnDropButton";
-import { TrueFalseButton } from "./components/TrueFalseButton";
-import { CoreTaskButton } from "./components/CoreTaskButton";
+import { GlowScriptButton } from "./components/ui/buttons/GlowScriptButton";
+import { DragnDropButton } from "./components/ui/buttons/DragnDropButton";
+import { TrueFalseButton } from "./components/ui/buttons/TrueFalseButton";
+import { CoreTaskButton } from "./components/ui/buttons/CoreTaskButton";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalBtnText, setModalBtnText] = useState("");
@@ -80,7 +80,7 @@ export default function App() {
               xp={458}
             />
             <View className="flex flex-col justify-start items-center h-full w-full">
-              <View className="flex flex-row-reverse justify-end p-10 items-start w-full">
+              <View className="flex flex-row-reverse justify-end px-10 pt-10 pb-5 items-start w-full">
                 <CircleLevelButton
                   onPress={() => {
                     setModalVisible(false);
@@ -89,9 +89,19 @@ export default function App() {
                   text={modalBtnText}
                 />
               </View>
-              <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
-              <DragnDropButton />
-              <TrueFalseButton />
+              <View className="flex flex-row-reverse justify-start items-start w-full">
+                <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
+              </View>
+
+              <View className="flex flex-row-reverse justify-end items-start w-full">
+                <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
+              </View>
+
+              <View className="flex flex-row-reverse justify-between items-start w-full">
+                <DragnDropButton />
+                <TrueFalseButton />
+              </View>
+
               <CoreTaskButton text="CORE TASK text" />
             </View>
           </SafeAreaView>

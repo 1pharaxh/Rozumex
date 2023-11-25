@@ -5,7 +5,7 @@ type CircleLevelGridProps = {
   setModalBtnText: React.Dispatch<React.SetStateAction<string>>;
 };
 import { View, ScrollView } from "react-native";
-import { CircleLevelButton } from "./CircleLevelButton";
+import { CircleLevelButton } from "./ui/buttons/CircleLevelButton";
 export const CircleLevelGrid: React.FC<CircleLevelGridProps> = ({
   setModalVisible,
   setModalBtnText,

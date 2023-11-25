@@ -5,7 +5,7 @@ type TrueFalseButtonProps = {
 };
 
 import { View, Text, TouchableOpacity } from "react-native";
-import ButtonIcon from "../assets/icons/true_false_button.svg";
+import ButtonIcon from "../../../assets/icons/true_false_button.svg";
 
 export const TrueFalseButton: React.FC<TrueFalseButtonProps> = ({
   className,
