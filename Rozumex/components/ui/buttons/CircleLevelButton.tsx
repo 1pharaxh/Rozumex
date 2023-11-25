@@ -4,13 +4,13 @@ import { View, Text, TouchableOpacity } from "react-native";
 import ButtonIcon from "../../../assets/icons/main_level_icon.svg";
 type CircleLevelProps = {
   text: string;
-  className?: string;
+  classname?: string;
   onPress?: () => void;
 };
 
 export const CircleLevelButton: React.FC<CircleLevelProps> = ({
   text,
-  className,
+  classname,
   onPress,
 }) => {
   let [fontsLoaded, fontError] = useFonts({
@@ -27,7 +27,7 @@ export const CircleLevelButton: React.FC<CircleLevelProps> = ({
       <View
         className={
           "rounded-full w-[168px] h-[98px] pt-4 flex flex-row items-center justify-center relative" +
-          className
+          classname
         }
       >
         <ButtonIcon

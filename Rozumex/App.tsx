@@ -80,7 +80,7 @@ export default function App() {
               xp={458}
             />
             <View className="flex flex-col justify-start items-center h-full w-full">
-              <View className="flex flex-row-reverse justify-end px-10 pt-10 pb-5 items-start w-full">
+              <View className="flex flex-row-reverse justify-end px-10 pt-10 items-start w-full">
                 <CircleLevelButton
                   onPress={() => {
                     setModalVisible(false);
@@ -89,20 +89,26 @@ export default function App() {
                   text={modalBtnText}
                 />
               </View>
-              <View className="flex flex-row-reverse justify-start items-start w-full">
-                <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
-              </View>
-
-              <View className="flex flex-row-reverse justify-end items-start w-full">
-                <GlowScriptButton text="GLOWSCRIPT text"></GlowScriptButton>
-              </View>
 
               <View className="flex flex-row-reverse justify-between items-start w-full">
+                <GlowScriptButton
+                  text="Why cite"
+                  durationtext="1.5 min"
+                ></GlowScriptButton>
+                <View className="mt-10">
+                  <GlowScriptButton
+                    text="Why research"
+                    durationtext="1.5 min"
+                  ></GlowScriptButton>
+                </View>
+              </View>
+
+              <View className="flex flex-row-reverse justify-between items-start w-full py-5">
                 <DragnDropButton />
                 <TrueFalseButton />
               </View>
 
-              <CoreTaskButton text="CORE TASK text" />
+              <CoreTaskButton classname="mt-10" text="Madagascar Apples" />
             </View>
           </SafeAreaView>
         </BlurView>

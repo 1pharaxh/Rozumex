@@ -1,6 +1,6 @@
 type CoreTaskButtonProps = {
   text: string;
-  className?: string;
+  classname: string;
   onPress?: () => void;
 };
 
@@ -11,7 +11,7 @@ import ButtonIcon from "../../../assets/icons/core_task_button.svg";
 
 export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
   text,
-  className,
+  classname,
   onPress,
 }) => {
   let [fontsLoaded, fontError] = useFonts({
@@ -23,12 +23,13 @@ export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
   }
 
   const [line1, line2] = text.split(" ");
+  console.log(text, classname);
   return (
     <TouchableOpacity onPress={onPress}>
       <View
         className={
-          "rounded-full w-[168px] h-[98px] flex flex-row items-center justify-center relative" +
-          className
+          "rounded-full w-[168px] h-[98px] flex flex-row items-center justify-center relative " +
+          classname
         }
       >
         <ButtonIcon

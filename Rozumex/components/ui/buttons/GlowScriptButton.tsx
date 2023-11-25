@@ -1,6 +1,7 @@
 type GlowScriptButtonProps = {
   text: string;
-  className?: string;
+  classname?: string;
+  durationtext: string;
   onPress?: () => void;
 };
 
@@ -11,7 +12,8 @@ import ButtonIcon from "../../../assets/icons/glowscript_button.svg";
 
 export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
   text,
-  className,
+  durationtext,
+  classname,
   onPress,
 }) => {
   let [fontsLoaded, fontError] = useFonts({
@@ -22,13 +24,12 @@ export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
     return null;
   }
 
-  const [line1, line2] = text.split(" ");
   return (
     <TouchableOpacity onPress={onPress}>
       <View
         className={
           "rounded-full w-[168px] h-[98px] pt-4 flex flex-row items-center justify-center relative" +
-          className
+          classname
         }
       >
         <ButtonIcon
@@ -54,7 +55,7 @@ export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
               textAlign: "center", // Center align the text
             }}
           >
-            {line1}
+            {text}
           </Text>
 
           <Text
@@ -66,7 +67,7 @@ export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
               textAlign: "center", // Center align the text
             }}
           >
-            {line1}
+            ~ {durationtext}
           </Text>
         </View>
       </View>
