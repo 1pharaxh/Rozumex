@@ -12,14 +12,14 @@ export const TrueFalseButton: React.FC<TrueFalseButtonProps> = ({
   onPress,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View
-        className={
-          "w-[168px] h-[98px] flex items-center justify-center " + classname
-        }
-      >
+    <View
+      className={
+        "w-[168px] h-[98px] flex items-center justify-center " + classname
+      }
+    >
+      <TouchableOpacity onPress={onPress}>
         <ButtonIcon />
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   );
 };

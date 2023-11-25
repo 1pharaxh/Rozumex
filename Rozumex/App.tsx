@@ -20,6 +20,7 @@ import { GlowScriptButton } from "./components/ui/buttons/GlowScriptButton";
 import { DragnDropButton } from "./components/ui/buttons/DragnDropButton";
 import { TrueFalseButton } from "./components/ui/buttons/TrueFalseButton";
 import { CoreTaskButton } from "./components/ui/buttons/CoreTaskButton";
+import { SubLevelGrid } from "./components/SubLevelGrid";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalBtnText, setModalBtnText] = useState("");
@@ -79,37 +80,10 @@ export default function App() {
               health={5}
               xp={458}
             />
-            <View className="flex flex-col justify-start items-center h-full w-full">
-              <View className="flex flex-row-reverse justify-end px-10 pt-10 items-start w-full">
-                <CircleLevelButton
-                  onPress={() => {
-                    setModalVisible(false);
-                    // animateButton();
-                  }}
-                  text={modalBtnText}
-                />
-              </View>
-
-              <View className="flex flex-row-reverse justify-between items-start w-full">
-                <GlowScriptButton
-                  text="Why cite"
-                  durationtext="1.5 min"
-                ></GlowScriptButton>
-                <View className="mt-10">
-                  <GlowScriptButton
-                    text="Why research"
-                    durationtext="1.5 min"
-                  ></GlowScriptButton>
-                </View>
-              </View>
-
-              <View className="flex flex-row-reverse justify-between items-start w-full py-5">
-                <DragnDropButton />
-                <TrueFalseButton />
-              </View>
-
-              <CoreTaskButton classname="mt-10" text="Madagascar Apples" />
-            </View>
+            <SubLevelGrid
+              setModalVisible={setModalVisible}
+              modalBtnText={modalBtnText}
+            />
           </SafeAreaView>
         </BlurView>
       </Modal>

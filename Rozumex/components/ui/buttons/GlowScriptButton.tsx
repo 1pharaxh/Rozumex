@@ -25,51 +25,50 @@ export const GlowScriptButton: React.FC<GlowScriptButtonProps> = ({
   }
 
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View
-        className={
-          "rounded-full w-[168px] h-[98px] pt-4 flex flex-row items-center justify-center relative" +
-          classname
-        }
-      >
-        <ButtonIcon
+    <TouchableOpacity
+      onPress={onPress}
+      className={
+        "rounded-full w-[168px] h-[98px] pt-4 flex flex-row items-center justify-center relative" +
+        classname
+      }
+    >
+      <ButtonIcon
+        style={{
+          position: "absolute",
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 3,
+            height: 5,
+          },
+          shadowOpacity: 0.8,
+          shadowRadius: 5,
+          elevation: 25,
+        }}
+      />
+      <View className=" absolute flex flex-col justify-between items-center pt-3 pb-2 w-full h-full gap-y-2">
+        <Text
           style={{
-            position: "absolute",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 3,
-              height: 5,
-            },
-            shadowOpacity: 0.8,
-            shadowRadius: 5,
-            elevation: 25,
+            fontFamily: "Nunito_900Black",
+            fontSize: 18,
+            color: "#FFF8DC",
+            margin: 0,
+            textAlign: "center", // Center align the text
           }}
-        />
-        <View className=" absolute flex flex-col justify-between items-center pt-3 pb-2 w-full h-full gap-y-2">
-          <Text
-            style={{
-              fontFamily: "Nunito_900Black",
-              fontSize: 18,
-              color: "#FFF8DC",
-              margin: 0,
-              textAlign: "center", // Center align the text
-            }}
-          >
-            {text}
-          </Text>
+        >
+          {text}
+        </Text>
 
-          <Text
-            style={{
-              fontFamily: "Nunito_900Black",
-              fontSize: 12,
-              color: "#FFF8DC",
-              margin: 0,
-              textAlign: "center", // Center align the text
-            }}
-          >
-            ~ {durationtext}
-          </Text>
-        </View>
+        <Text
+          style={{
+            fontFamily: "Nunito_900Black",
+            fontSize: 12,
+            color: "#FFF8DC",
+            margin: 0,
+            textAlign: "center", // Center align the text
+          }}
+        >
+          ~ {durationtext}
+        </Text>
       </View>
     </TouchableOpacity>
   );

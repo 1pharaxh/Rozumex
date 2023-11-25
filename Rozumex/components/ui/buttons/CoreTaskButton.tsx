@@ -23,43 +23,41 @@ export const CoreTaskButton: React.FC<CoreTaskButtonProps> = ({
   }
 
   const [line1, line2] = text.split(" ");
-  console.log(text, classname);
   return (
-    <TouchableOpacity onPress={onPress}>
-      <View
-        className={
-          "rounded-full w-[168px] h-[98px] flex flex-row items-center justify-center relative " +
-          classname
-        }
+    <TouchableOpacity
+      onPress={onPress}
+      className={
+        "rounded-full w-[168px] h-[98px] flex flex-row items-center justify-center relative " +
+        classname
+      }
+    >
+      <ButtonIcon
+        style={{
+          position: "absolute",
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 3,
+            height: 5,
+          },
+          shadowOpacity: 0.8,
+          shadowRadius: 5,
+          elevation: 25,
+        }}
+      />
+      <Text
+        style={{
+          position: "absolute",
+          fontFamily: "Nunito_900Black",
+          fontSize: 22,
+          color: "#FAA241",
+          margin: 0,
+          textAlign: "center", // Center align the text
+        }}
       >
-        <ButtonIcon
-          style={{
-            position: "absolute",
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 3,
-              height: 5,
-            },
-            shadowOpacity: 0.8,
-            shadowRadius: 5,
-            elevation: 25,
-          }}
-        />
-        <Text
-          style={{
-            position: "absolute",
-            fontFamily: "Nunito_900Black",
-            fontSize: 22,
-            color: "#FAA241",
-            margin: 0,
-            textAlign: "center", // Center align the text
-          }}
-        >
-          {line1}
-          {"\n"}
-          {line2}
-        </Text>
-      </View>
+        {line1}
+        {"\n"}
+        {line2}
+      </Text>
     </TouchableOpacity>
   );
 };
